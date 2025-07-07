@@ -48,7 +48,7 @@ Each commit document inserted into MongoDB includes:
     }
   ]
 }
-
+```
 ---
 
 # 📥 Requirements
@@ -116,8 +116,11 @@ The script will:
 # 🧠 Features
 
 ✅ **Advanced commit ingestion** with extra metadata
+
 ✅ **Efficient rate-limit handling** (pause and retry logic)
+
 ✅ **Clean MongoDB storage structure** for analytics and querying
+
 ✅ **Easy to configure** for other repositories
 
 ---
@@ -127,5 +130,7 @@ The script will:
 The project includes:
 
 ✅ `README.md` (this file)
+
 ✅ `ingest_commits.py` (Python client for GitHub + MongoDB)
+
 ✅ Evidence of successful ingestion via printed logs and database contents
