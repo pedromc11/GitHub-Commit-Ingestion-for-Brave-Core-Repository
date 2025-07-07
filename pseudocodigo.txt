@@ -1,0 +1,45 @@
+# https://www.freecodecamp.org/espanol/news/python-leer-archivo-json-como-cargar-json-desde-un-archivo-y-procesar-dumps/
+
+pedir rate limit
+fecha_reset = rate_limit.reset
+page = pagina actual empieza en 1
+sha_commit = commit que va a hacer la peticion de sus datos
+excepcion = false
+
+while (commits_restantes == true): (mientras haya mas commits)
+    peticion de la siguiente página de commits con pagina=page
+    if status == 200
+        if response.content: (no devuelva pagina en blanco)
+            if excepcion = false:
+                for commit in commits_dict:
+                    try:
+                        pedir los datos de commit
+                        insertar cada commit
+                    except requests.exceptions.HTTPError as error:
+                        if error.response.status_code == 403 and "API rate limit exceeded" in error.response.text:
+                            print("Se ha superado el límite de solicitudes de la API de GitHub. Espere antes de intentarlo de nuevo.")
+                            excepcion = true
+                            sha_commit = commit
+                            esperar hasta la fecha donde se restablecen los 5000 + 30s:
+                                - def fecha_desde_tiempo_unix(fecha_reset):
+                                    fecha = datetime.datetime.fromtimestamp(tiempo_unix)
+                                    return fecha
+                                - wait (fecha) + 30s
+                if excepcion = false:
+                    pagina += 1
+            else:
+                pedir rate limit
+                fecha_reset = rate_limit.reset
+                encontrado = false
+                for commit in commits_dict:
+                    if commit = sha_commit:
+                        encontrado = true
+
+                    if encontrado:
+                        pedir los datos de commit
+                        insertar cada commit
+                        
+                pagina += 1
+                excepcion = false
+        else:
+            commits_restantes = false
